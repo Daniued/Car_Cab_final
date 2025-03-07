@@ -1,5 +1,6 @@
 package servlets;
 
+import java.io.IOException;
 import dao.LoginDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -7,7 +8,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import java.io.IOException;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -25,9 +25,14 @@ public class LoginServlet extends HttpServlet {
 
         if (role != null) {
             // Set user session attributes
-            HttpSession session = request.getSession();
+            HttpSession session = request.getSession(true);
             session.setAttribute("username", username);
             session.setAttribute("role", role);
+            session.setMaxInactiveInterval(30 * 60); // Session timeout in 30 minutes
+
+            // Debugging session
+            System.out.println("User logged in: " + username);
+            System.out.println("User role: " + role);
 
             // Redirect based on user role
             switch (role) {
@@ -38,7 +43,7 @@ public class LoginServlet extends HttpServlet {
                     response.sendRedirect("customerDashboard.jsp");
                     break;
                 case "driver":
-                    response.sendRedirect("driverDashboard.jsp");
+                    response.sendRedirect("TestBookingServlet");
                     break;
                 default:
                     response.getWriter().println("Invalid role. Access denied.");
@@ -46,7 +51,7 @@ public class LoginServlet extends HttpServlet {
             }
         } else {
             // Invalid credentials handling
-            response.getWriter().println("Invalid username or password. Please try again.");
+            response.sendRedirect("index.jsp?message=Invalid username or password. Please try again.");
         }
     }
 }

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,20 +75,26 @@
             <input type="text" name="nic" id="nic" placeholder="Enter NIC" required>
 
             <!-- Driver-Specific Fields -->
-            <div id="driverFields" style="display: none;">
-                <label for="license">Driver License Number:</label>
-                <input type="text" name="license" id="license" placeholder="Enter License Number">
+<!-- Driver-Specific Fields -->
+<div id="driverFields" style="display: none;">
+    <label for="license">Driver License Number:</label>
+    <input type="text" name="license" id="license" placeholder="Enter License Number" required>
 
-                <label for="vehicle">Vehicle Type:</label>
-                <select name="vehicle" id="vehicle">
-                    <option value="Car">Car</option>
-                    <option value="Van">Van</option>
-                    <option value="Bike">Bike</option>
-                </select>
+    <label for="vehicle">Vehicle Type:</label>
+    <select name="vehicle" id="vehicle" required>
+        <option value="Car">Car</option>
+        <option value="Van">Van</option>
+        <option value="Bike">Bike</option>
+        <option value="Bus">Bus</option>
+    </select>
 
-                <label for="plate">Vehicle Plate Number:</label>
-                <input type="text" name="plate" id="plate" placeholder="Enter Plate Number">
-            </div>
+    <label for="plate">Vehicle Plate Number:</label>
+    <input type="text" name="plate" id="plate" placeholder="Enter Plate Number" required>
+
+    <label for="capacity">Vehicle Capacity:</label>
+    <input type="number" name="capacity" id="capacity" placeholder="Enter Capacity" min="1" required>
+</div>
+
 
             <button type="submit" class="btn">Register</button>
         </form>

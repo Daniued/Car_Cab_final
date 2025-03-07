@@ -48,6 +48,7 @@ public class DriverRegisterServlet extends HttpServlet {
         driver.setLicense(license);
         driver.setVehicleType(vehicle);
         driver.setPlate(plate);
+        driver.setCapacity(vehicle.equals("Car") ? 4 : (vehicle.equals("Van") ? 8 : 2)); // Capacity based on vehicle type
 
         // Register driver using DAO
         String errorMessage = DriverDAO.registerDriver(driver);

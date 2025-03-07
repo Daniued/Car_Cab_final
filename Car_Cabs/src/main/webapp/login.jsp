@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
+<%@ page session="true" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,7 +103,7 @@
         </div>
         <div class="right-panel">
             <h2>Login to Your Account</h2>
-            <form action="LoginServlet" method="post">
+            <form action="<%= request.getContextPath() %>/LoginServlet"  method="post">
                 <input type="text" name="username" placeholder="Enter Username" required>
                 <input type="password" name="password" placeholder="Enter Password" required>
                 <button type="submit" class="btn">Login</button>

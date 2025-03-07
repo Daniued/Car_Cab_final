@@ -9,6 +9,7 @@ public class Driver {
     private String license;
     private String vehicleType;
     private String plate;
+    private int capacity;
 
     // Getters and Setters
     public int getDriverId() {
@@ -65,5 +66,12 @@ public class Driver {
     }
     public void setPlate(String plate) {
         this.plate = plate;
+    }
+    
+    public int getCapacity() {
+        return capacity;
+    }
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 }
