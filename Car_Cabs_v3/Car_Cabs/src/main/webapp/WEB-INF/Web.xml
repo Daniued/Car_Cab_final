@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+         
+    <servlet>
+        <servlet-name>CustomerBookingHistoryServlet</servlet-name>
+        <servlet-class>servlets.CustomerBookingHistoryServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>CustomerBookingHistoryServlet</servlet-name>
+        <url-pattern>/CustomerBookingHistoryServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CustomerBookingServlet</servlet-name>
+        <servlet-class>servlets.CustomerBookingServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>CustomerBookingServlet</servlet-name>
+        <url-pattern>/CustomerBookingServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookingConfirmationServlet</servlet-name>
+        <servlet-class>servlets.BookingConfirmationServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>BookingConfirmationServlet</servlet-name>
+        <url-pattern>/BookingConfirmationServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DriverBookingServlet</servlet-name>
+        <servlet-class>servlets.DriverBookingServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>DriverBookingServlet</servlet-name>
+        <url-pattern>/DriverBookingServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>
