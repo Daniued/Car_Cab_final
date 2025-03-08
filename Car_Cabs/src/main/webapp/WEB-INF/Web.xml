@@ -3,79 +3,54 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
          version="5.0">
-
-    <!-- Customer Registration Servlet -->
+         
     <servlet>
-        <servlet-name>CustomerRegisterServlet</servlet-name>
-        <servlet-class>servlets.CustomerRegisterServlet</servlet-class>
+        <servlet-name>CustomerBookingHistoryServlet</servlet-name>
+        <servlet-class>servlets.CustomerBookingHistoryServlet</servlet-class>
     </servlet>
+    
     <servlet-mapping>
-        <servlet-name>CustomerRegisterServlet</servlet-name>
-        <url-pattern>/CustomerRegisterServlet</url-pattern>
+        <servlet-name>CustomerBookingHistoryServlet</servlet-name>
+        <url-pattern>/CustomerBookingHistoryServlet</url-pattern>
     </servlet-mapping>
 
-    <!-- Driver Registration Servlet -->
-    <servlet>
-        <servlet-name>DriverRegisterServlet</servlet-name>
-        <servlet-class>servlets.DriverRegisterServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>DriverRegisterServlet</servlet-name>
-        <url-pattern>/DriverRegisterServlet</url-pattern>
-    </servlet-mapping>
-
-    <!-- Login Servlet -->
-    <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>servlets.LoginServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/LoginServlet</url-pattern>
-    </servlet-mapping>
-
-    <!-- Customer Booking Servlet -->
     <servlet>
         <servlet-name>CustomerBookingServlet</servlet-name>
         <servlet-class>servlets.CustomerBookingServlet</servlet-class>
     </servlet>
+    
     <servlet-mapping>
         <servlet-name>CustomerBookingServlet</servlet-name>
         <url-pattern>/CustomerBookingServlet</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
-    <servlet-name>TestBookingServlet</servlet-name>
-    <servlet-class>servlets.TestBookingServlet</servlet-class>
-</servlet>
-
-<servlet-mapping>
-    <servlet-name>TestBookingServlet</servlet-name>
-    <url-pattern>/TestBookingServlet</url-pattern>
-</servlet-mapping>
-
-    <!-- Additional Servlets (e.g., Driver, Admin) can be added here -->
-    
- <servlet>
         <servlet-name>BookingConfirmationServlet</servlet-name>
         <servlet-class>servlets.BookingConfirmationServlet</servlet-class>
     </servlet>
-
+    
     <servlet-mapping>
         <servlet-name>BookingConfirmationServlet</servlet-name>
         <url-pattern>/BookingConfirmationServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DriverBookingServlet</servlet-name>
+        <servlet-class>servlets.DriverBookingServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>DriverBookingServlet</servlet-name>
+        <url-pattern>/DriverBookingServlet</url-pattern>
+    </servlet-mapping>
     
     <servlet>
-    <servlet-name>DriverDashboardServlet</servlet-name>
-    <servlet-class>servlets.DriverDashboardServlet</servlet-class>
+    <servlet-name>DriverRideHistoryServlet</servlet-name>
+    <servlet-class>servlets.DriverRideHistoryServlet</servlet-class>
 </servlet>
-
 <servlet-mapping>
-    <servlet-name>DriverDashboardServlet</servlet-name>
-    <url-pattern>/DriverDashboardServlet</url-pattern>
+    <servlet-name>DriverRideHistoryServlet</servlet-name>
+    <url-pattern>/DriverRideHistoryServlet</url-pattern>
 </servlet-mapping>
-    
- 
-    
+
 </web-app>

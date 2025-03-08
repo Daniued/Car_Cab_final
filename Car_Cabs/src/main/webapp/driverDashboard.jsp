@@ -11,6 +11,7 @@
     <div class="container">
         <h1>Welcome, ${sessionScope.username} (Driver)</h1>
         <a href="logout.jsp" class="btn">Logout</a>
+        <button onclick="window.location.href='TestBookingServlet'" class="btn">Refresh</button>
         <hr>
 
         <!-- Pending Rides Section -->
@@ -91,11 +92,42 @@
 
         <hr>
 
-        <!-- Earnings Section -->
-        <section>
-            <h2>Total Earnings</h2>
-            <p>Your total earnings: <strong>${totalEarnings}</strong></p>
-        </section>
+<!-- Ride History Section -->
+<section>
+    <h2>Ride History</h2>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>Booking ID</th>
+            <th>Pickup Location</th>
+            <th>Drop-off Location</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Vehicle Type</th>
+            <th>Status</th>
+            <th>Total Amount</th>
+        </tr>
+        <c:forEach var="ride" items="${rideHistory}">
+            <tr>
+                <td>${ride.requestId}</td>
+                <td>${ride.pickupLocation}</td>
+                <td>${ride.dropoffLocation}</td>
+                <td>${ride.bookingDate}</td>
+                <td>${ride.time}</td>
+                <td>${ride.vehicleType}</td>
+                <td>${ride.status}</td>
+                <td>${ride.totalAmount}</td>
+            </tr>
+        </c:forEach>
+    </table>
+</section>
+
+<!-- Total Payment Section -->
+<section>
+    <h2>Total Ride Payments</h2>
+    <p>Total Earnings: ${totalEarnings}</p>
+</section>
+
+
     </div>
 </body>
 </html>

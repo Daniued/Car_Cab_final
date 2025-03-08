@@ -155,7 +155,7 @@ public class DriverBookingDAO {
 
             while (rs.next()) {
                 BookingRequest request = new BookingRequest();
-                request.setRequestId(rs.getInt("request_id"));
+                request.setBookingId(rs.getInt("request_id"));
                 request.setUsername(rs.getString("username"));
                 request.setPickupLocation(rs.getString("pickup_location"));
                 request.setDropoffLocation(rs.getString("drop_location"));

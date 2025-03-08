@@ -40,8 +40,9 @@ public class LoginServlet extends HttpServlet {
                     response.sendRedirect("adminDashboard.jsp");
                     break;
                 case "customer":
-                    response.sendRedirect("customerDashboard.jsp");
+                    response.sendRedirect("CustomerBookingHistoryServlet");
                     break;
+
                 case "driver":
                     response.sendRedirect("TestBookingServlet");
                     break;

@@ -133,22 +133,36 @@
         <hr>
 
         <!-- Booking History Section -->
-        <section>
-            <h2>Your Booking History</h2>
-            <table border="1">
-                <tr>
-                    <th>Booking ID</th>
-                    <th>Pickup</th>
-                    <th>Drop-off</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Vehicle Type</th>
-                    <th>Status</th>
-                    <th>Total Amount</th>
-                </tr>
-                <!-- Booking history data will be dynamically populated here -->
-            </table>
-        </section>
+      <!-- Booking History Section -->
+<section>
+    <h2>Your Booking History</h2>
+    <table border="1">
+        <tr>
+            <th>Booking ID</th>
+            <th>Pickup</th>
+            <th>Drop-off</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Vehicle Type</th>
+            <th>Status</th>
+            <th>Total Amount</th>
+        </tr>
+        <c:forEach var="booking" items="${bookingHistory}">
+            <tr>
+                <<td>${booking.requestId}</td>
+
+                <td>${booking.pickupLocation}</td>
+                <td>${booking.dropoffLocation}</td>
+                <td>${booking.bookingDate}</td>
+                <td>${booking.time}</td>
+                <td>${booking.vehicleType}</td>
+                <td>${booking.status}</td>
+                <td>${booking.totalAmount}</td>
+            </tr>
+        </c:forEach>
+    </table>
+</section>
+
     </div>
 
 </body>
