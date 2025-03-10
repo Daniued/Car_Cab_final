@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <h1>Welcome to Customer Dashboard</h1>
-        <a href="logout.jsp" class="btn">Logout</a>
+      <a href="LogoutServlet" class="btn">Logout</a>
         <hr>
 
         <!-- Quick Booking Form -->
@@ -149,7 +149,7 @@
         </tr>
         <c:forEach var="booking" items="${bookingHistory}">
             <tr>
-                <<td>${booking.requestId}</td>
+                <<td>${booking.bookingId}</td>
 
                 <td>${booking.pickupLocation}</td>
                 <td>${booking.dropoffLocation}</td>

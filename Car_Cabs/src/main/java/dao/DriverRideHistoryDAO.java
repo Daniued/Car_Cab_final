@@ -72,7 +72,8 @@ public class DriverRideHistoryDAO {
 	            return totalEarnings;
 	        }
 
-	        String sql = "SELECT SUM(total_amount) as total FROM Bookings WHERE driver_id = (SELECT driver_id FROM Drivers WHERE username = ?) AND status IN ('Confirmed', 'Completed')";
+	        String sql = "SELECT SUM(total_amount) as total FROM Bookings WHERE driver_id = (SELECT driver_id FROM Drivers WHERE username = ?) "
+	        		+ "AND status IN ('Confirmed', 'Completed')";
 	        PreparedStatement stmt = conn.prepareStatement(sql);
 	        stmt.setString(1, driverUsername);
 	        ResultSet rs = stmt.executeQuery();

@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h1>Welcome, ${sessionScope.username} (Driver)</h1>
-        <a href="logout.jsp" class="btn">Logout</a>
+         <a href="LogoutServlet" class="btn">Logout</a>
         <button onclick="window.location.href='TestBookingServlet'" class="btn">Refresh</button>
         <hr>
 
@@ -32,7 +32,7 @@
         </tr>
         <c:forEach var="request" items="${pendingRequests}">
             <tr>
-                <td>${request.requestId}</td>
+                <td>${request.bookingId}</td>
                 <td>${request.pickupLocation}</td>
                 <td>${request.dropoffLocation}</td>
                 <td>${request.bookingDate}</td>
@@ -43,7 +43,7 @@
                 <td>${request.status}</td>
                 <td>
                    <form action="<%= request.getContextPath() %>/BookingConfirmationServlet"  method="post">
-    <input type="hidden" name="requestId" value="${request.requestId}">
+    <input type="hidden" name="requestId" value="${request.bookingId}">
     <button type="submit" name="action" value="accept" class="btn accept">Accept</button>
     <button type="submit" name="action" value="reject" class="btn reject">Reject</button>
 </form>
@@ -108,7 +108,7 @@
         </tr>
         <c:forEach var="ride" items="${rideHistory}">
             <tr>
-                <td>${ride.requestId}</td>
+               <td>${ride.bookingId}</td>
                 <td>${ride.pickupLocation}</td>
                 <td>${ride.dropoffLocation}</td>
                 <td>${ride.bookingDate}</td>

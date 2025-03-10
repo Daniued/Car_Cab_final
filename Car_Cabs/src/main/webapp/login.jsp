@@ -97,7 +97,7 @@
 <body>
     <div class="container">
         <div class="left-panel">
-            <img src="images/login-illustration.png" alt="Illustration">
+            <img src="img/amico.png" alt="Illustration">
             <h2>Turn your ideas into reality.</h2>
             <p>Start for free and get exclusive offers from the community.</p>
         </div>

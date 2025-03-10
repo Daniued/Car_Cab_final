@@ -19,7 +19,7 @@
 <body>
     <div class="container">
         <h1>Admin Dashboard</h1>
-        <a href="logout.jsp" class="btn">Logout</a>
+        <a href="LogoutServlet" class="btn">Logout</a>
         <hr>
         <nav>
            

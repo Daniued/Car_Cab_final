@@ -1,0 +1,85 @@
+/* Updated CSS for Two-Column Layout with Improved Design */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fce4ec;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%;
+}
+
+h2 {
+    grid-column: span 2;
+    font-size: 2rem;
+    color: #ad1457;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: vertical;
+    height: 60px;
+}
+
+button {
+    grid-column: span 2;
+    padding: 10px 20px;
+    background-color: #880e4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #ad1457;
+}
+
+p {
+    grid-column: span 2;
+    margin-top: 20px;
+    text-align: right;
+}
+
+a {
+    color: #ad1457;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#driverFields {
+    grid-column: span 2;
+}

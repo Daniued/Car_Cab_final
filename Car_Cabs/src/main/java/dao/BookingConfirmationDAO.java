@@ -88,7 +88,8 @@ public class BookingConfirmationDAO {
 
 
 	            // Insert into Bookings table with the correct driver ID and vehicle ID
-	            String insertSql = "INSERT INTO Bookings (username, driver_id, vehicle_id, pickup_location, drop_location, booking_date, time, passenger_count, vehicle_type, total_amount, status) "
+	            String insertSql = "INSERT INTO Bookings (username, driver_id, vehicle_id, pickup_location, drop_location, booking_date, time, "
+	            		+ "passenger_count, vehicle_type, total_amount, status) "
 	                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'Confirmed')";
 	            PreparedStatement insertStmt = conn.prepareStatement(insertSql);
 	            insertStmt.setString(1, username);
