@@ -7,7 +7,6 @@ import org.junit.Test;
 import Bean.Customer;
 import Bean.Driver;
 import Bean.BookingRequest;
-import Bean.BookingRequest;
 
 import dao.AdminCustomerDAO;
 import dao.DriverBookingDAO;
@@ -45,9 +44,14 @@ public class TestCarCabsSystem {
         }
     }
 
-  
+    // Test 3: Validate driver booking acceptance
+    @Test
+    public void testAcceptBooking() {
+        String result = driverBookingDAO.acceptBooking(1, "KM4");
+        assertTrue("Booking acceptance should return success or an empty string", result.equals("") || result.contains("success"));
+    }
 
-   
+  
 
     // Test 5: Validate booking request creation
     @Test
