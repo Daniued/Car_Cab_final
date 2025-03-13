@@ -16,7 +16,7 @@
         }
     </script>
 </head>
-<body>
+<body >
     <div class="container">
         <h1>Admin Dashboard</h1>
         <a href="LogoutServlet" class="btn">Logout</a>

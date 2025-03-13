@@ -12,15 +12,7 @@
             var driverFields = document.getElementById("driverFields");
             driverFields.style.display = (role === "driver") ? "block" : "none";
         }
-        function updateFormAction() {
-            var role = document.getElementById("role").value;
-            var form = document.getElementById("registrationForm");
-            if (role === "customer") {
-                form.action = "<%= request.getContextPath()%>/CustomerRegisterServlet";
-            } else {
-                form.action = "<%= request.getContextPath()%>/DriverRegisterServlet";
-            }
-        }
+     
 
     </script>
 </head>
@@ -104,7 +96,7 @@
                 </div>
 
                 <button type="submit" class="btn">Register</button>
-                <p style="text-align:center;">Already have an account? <a href="index.jsp">Login here</a></p>
+                <p style="text-align:center;">Already have an account? <a href="login.jsp">Login here</a></p>
             </form>
         </div>
     </div>

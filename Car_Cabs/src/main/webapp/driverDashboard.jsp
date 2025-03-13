@@ -7,15 +7,30 @@
     <title>Driver Dashboard</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
-<body>
+ <style>
+        .section {
+            display: none; /* Hide sections by default */
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+    </style>
+<body style="background-image: url('img/img2.png');  background-repeat: no-repeat;
+  background-attachment: fixed;
+    background-size: 100% 100%;
+">
     <div class="container">
         <h1>Welcome, ${sessionScope.username} (Driver)</h1>
          <a href="LogoutServlet" class="btn">Logout</a>
         <button onclick="window.location.href='TestBookingServlet'" class="btn">Refresh</button>
+        <button onclick="showSection('section1')">Available Ride</button>
+   
+    <button onclick="showSection('section3')">History</button>
+    <button onclick="showSection('section4')">Earnings</button>
         <hr>
 
         <!-- Pending Rides Section -->
-        <section>
+        <section id="section1" class="section">
             <h1>Driver Dashboard - Pending Ride Requests</h1>
     <table border="1" cellpadding="5" cellspacing="0">
         <tr>
@@ -54,10 +69,10 @@
     </table>
         </section>
 
-        <hr>
+      
 
         <!-- Assigned Rides Section -->
-        <section>
+        <section id="section2" class="section">
             <h2>Your Assigned Rides</h2>
             <table border="1">
                 <tr>
@@ -90,10 +105,10 @@
             </table>
         </section>
 
-        <hr>
+   
 
 <!-- Ride History Section -->
-<section>
+<section id="section3" class="section">
     <h2>Ride History</h2>
     <table border="1" cellpadding="5" cellspacing="0">
         <tr>
@@ -122,12 +137,23 @@
 </section>
 
 <!-- Total Payment Section -->
-<section>
+<section id="section4" class="section">
     <h2>Total Ride Payments</h2>
     <p>Total Earnings: ${totalEarnings}</p>
 </section>
 
 
     </div>
+     <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
 </body>
 </html>

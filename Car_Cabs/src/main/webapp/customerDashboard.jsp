@@ -9,14 +9,33 @@
     <title>Customer Dashboard</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
-<body>
+ <style>
+        .section {
+            display: none; /* Hide sections by default */
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            width:40%;
+            margin:auto
+        }
+    </style>
+<body style="background-image: url('img/img1.png');  background-repeat: no-repeat;
+  background-attachment: fixed;
+    background-size: 100% 100%;
+">
+	
     <div class="container">
         <h1>Welcome to Customer Dashboard</h1>
       <a href="LogoutServlet" class="btn">Logout</a>
+      <button onclick="showSection('section1')">Quick Booking</button>
+    <button onclick="showSection('section2')">Plan Booking</button>
+    <button onclick="showSection('section3')">Booking History</button>
         <hr>
+        
+      
 
         <!-- Quick Booking Form -->
-        <section>
+        <section id="section1" class="section">
             <h2>Quick Booking</h2>
             <form action="CustomerBookingServlet" method="post">
                 <input type="hidden" name="bookingType" value="quick">
@@ -70,10 +89,10 @@
             </form>
         </section>
 
-        <hr>
+    
 
         <!-- Planned Booking Form -->
-        <section>
+        <section id="section2" class="section">
             <h2>Planned Booking</h2>
             <form action="CustomerBookingServlet" method="post">
                 <input type="hidden" name="bookingType" value="planned">
@@ -130,11 +149,11 @@
             </form>
         </section>
 
-        <hr>
+       
 
         <!-- Booking History Section -->
       <!-- Booking History Section -->
-<section>
+		<section id="section3" class="section" style="width:60%;">
     <h2>Your Booking History</h2>
     <table border="1">
         <tr>
@@ -164,6 +183,17 @@
 </section>
 
     </div>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
 
 </body>
 </html>
